@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+$primary-color: #3ef98f;
+$secondary-color: #bfc3fd;
+$bg-color: #faf8e6;
+$text-color: #212121;
+$font-family: Arial, sans-serif;
+/* for sidenav to take a whole page */
+html,
+body {
+  margin: auto;
+  height: 100%;
+  background-color: $bg-color;
+  font-family: $font-family;
+}
+button {
+  background-color: $primary-color;
+  color: $text-color;
+
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: $font-family;
+  font-size: 24px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    font-size: 24px;
+    color: #333;
+    font-family: $font-family;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: $font-family;
+  }
+}
+@mixin button-styles {
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: $font-family;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.button {
+  @include button-styles;
+}
+
+.another-button {
+  @include button-styles;
+  font-size: 18px;
+}
+/* Style for the native header element */
+header {
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 10px 20px;
+  font-family: $font-family;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Add transitions for smooth hover effects */
+  transition: background-color 0.3s ease;
+}
+
+/* Style for the native nav element within the header */
+header nav {
+  display: flex;
+}
+
+/* Style for the native anchor (a) elements within the nav */
+header nav a {
+  color: $text-color;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  font-family: $font-family;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $text-color;
+  }
+}
+footer {
+  background-color: $secondary-color;
+  padding: 10px 20px;
+}
+
+// html,
+// body {
+//   height: 100%;
+// }
+// body {
+//   margin: 0;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
